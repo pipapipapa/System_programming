@@ -1,0 +1,43 @@
+mkdir Work
+cd Work
+mkdir "Лабораторная работа №1!"
+mkdir "Никулин Илья Максимович"
+
+ls -al
+chmod 772 "Лабораторная работа №1!"
+chmod 200 "Никулин Илья Максимович"
+ls -al
+
+touch "Text @1" "Text \$2" "Text #3"
+
+cat > "Text @1" << EOF
+Птица говорун отличается умом и сообразительностью!
+Отличается умом, отличается сообразительностью...
+EOF
+
+cp "Text @1" "Text \$2"
+
+mv "Text \$2" "Лабораторная работа №1!"/
+cp "Text @1" "Никулин Илья Максимович"/
+
+gzip "Text @1" "Text #3"
+tar -cf MyAchiv.tar "Text @1.gz" "Text #3.gz"
+
+gzip -d "Text @1" "Text #3"
+head -n 1 "Text @1" > "Text #3"
+echo "Будь осторожен! Преступник вооружен!" >> "Text #3"
+
+tac "Никулин Илья Максимович/Text @1" > "Никулин Илья Максимович/Result_one"
+
+mv "Никулин Илья Максимович/Result_one" "Никулин Илья Максимович/Result_two"
+
+touch "Лабораторная работа №1!"/"Result_3" 
+find "Никулин Илья Максимович" -name "T*" > "Лабораторная работа №1!"/"Result_3"
+
+uname -a >> "Лабораторная работа №1!"/"Result_3"
+date >> "Лабораторная работа №1!"/"Result_3"
+
+cd ..
+mkdir Lab_1
+mv sandbox Work Lab_1/
+mv Work_files Lab1/
